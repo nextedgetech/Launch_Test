@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEXTEDGE TECH </title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+  /* Give sections more breathing room */
+section {
+  margin: 80px 0;
+}
+
+/* Hero can sit a bit closer to the top */
+.hero {
+  margin-top: 32px;
+  margin-bottom: 64px;
+}
+
+    :root {
+      --bg: #0b0f1a;
+      --card: #0f1724;
+      --muted: #9aa6bf;
+      --accent: #00d4ff;
+      --accent-2: #7b61ff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Poppins;
+      background: radial-gradient(1000px 400px at 10% 10%, rgba(123, 97, 255, 0.08), transparent), linear-gradient(180deg, #05060a 0%, #0b0f1a 100%);
+      color: #e6eef8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 32px; }
+
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+
+    .brand { display: flex; align-items: center; gap: 14px; }
+    .brand img { width: 90px; height: auto; animation: glow 3s ease-in-out infinite alternate; }
+
+    .brand h1 { font-family: Poppins; margin: 0; font-size: 22px; }
+    .tag { font-size: 12px; color: var(--muted); }
+
+    .nav-links { display: flex; gap: 18px; align-items: center; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 14px; }
+    .btn { background: linear-gradient(90deg, var(--accent), var(--accent-2)); border: none; padding: 10px 16px; border-radius: 10px; color: #021026; font-weight: 700; cursor: pointer; text-decoration: none; }
+
+    @keyframes glow { 0% { filter: drop-shadow(0 0 0px rgba(123,97,255,0.4)); } 100% { filter: drop-shadow(0 0 12px rgba(0,212,255,0.8)); } }
+
+    .hero { display: grid; grid-template-columns: 1fr 420px; gap: 40px; align-items: center; padding: 60px 0; }
+    .hero h2 { font-size: 42px; line-height: 1.05; margin: 0; font-family: Poppins; letter-spacing: -0.6px; }
+    .hero p { color: var(--muted); margin-top: 12px; font-size: 16px; }
+    .cta-row { display: flex; gap: 12px; margin-top: 22px; }
+
+    .device-stack { position: relative; border-radius: 16px; padding: 20px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); box-shadow: 0 20px 60px rgba(2,8,23,0.6); }
+    .device img { max-width: 100%; border-radius: 8px; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 50px; }
+
+    .card { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius: 12px; padding: 24px; border: 1px solid rgba(255,255,255,0.03); }
+    .card h4 { margin-top: 0; color: #fff; }
+    .card p { color: var(--muted); font-size: 14px; }
+	    .card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+
+    footer { text-align: center; margin-top: 80px; padding: 32px 0; color: var(--muted); font-size: 13px; }
+    footer img { width: 120px; height: auto; animation: glow 3s ease-in-out infinite alternate; margin-bottom: 12px; }
+
+    /* Team */
+    .team{display:flex;gap:18px;margin-top:24px}
+    .person{flex:1;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:18px;border-radius:12px;text-align:center}
+    .avatar{width:84px;height:84px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:inline-flex;align-items:center;justify-content:center;color:#021026;font-weight:700;font-size:20px}
+    .role{font-size:13px;color:var(--muted)}
+.muted { color: var(--muted); font-size: 14px;}
+
+.muted-btn { background: transparent; border: 1px solid rgba(255,255,255,0.12); padding: 10px 14px; border-radius: 10px;
+  color: var(--muted);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+}
+
+    /* Contact */
+.contact{display:grid;grid-template-columns:1fr 360px;gap:20px;margin-top:26px}
+form{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:20px;border-radius:12px}
+.input,textarea{width:100%;padding:12px;border-radius:8px;border:1px solid rgba(148,163,184,0.35);background:rgba(15,23,42,0.6);color:#e6eef8;font-size:14px}
+.note{font-size:13px;color:var(--muted);margin-top:8px}
+
+
+    @media (max-width: 620px) { .nav-links { display: none; } .hero { grid-template-columns: 1fr; } }
+	
+    .float{animation:float 6s ease-in-out infinite}
+    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
+	
+	/* ---- Project gallery slideshows ---- */
+.slideshow-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.slide {
+  display: none;
+  flex: 0 0 calc(33.333% - 12px);      /* default: 3 per row */
+  text-align: center;
+}
+
+#design-slideshow .slide {
+  flex: 0 0 calc(50% - 10px);          /* design: 2 per view */
+}
+
+#data-slideshow .slide {
+  flex: 0 0 calc(50% - 10px);          /* data: 2 per view */
+}
+
+#repair-slideshow .slide {
+  flex: 0 0 100%;                      /* repair: 1 per view */
+}
+
+
+.slide img {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  padding: 8px 12px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  font-weight: bold;
+  border: none;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.dot-container {
+  text-align: center;
+  margin-top: 8px;
+}
+
+.dot {
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+  margin: 0 3px;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: #4b5563;
+}
+
+.dot.active {
+  background-color: #00d4ff;
+}
+
+/* ---- Lightbox (click to zoom) ---- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(15,23,42,0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.lightbox.show {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  font-size: 32px;
+  color: #e5e7eb;
+  cursor: pointer;
+  font-weight: 600;
+}
+    /* Layout for repair gallery + services list */
+    .repair-layout {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      align-items: flex-start;
+      margin-top: 12px;
+    }
+
+    .repair-layout .slideshow-container {
+      flex: 1 1 320px;
+    }
+
+    .repair-services-box {
+      flex: 1 1 260px;
+      background: rgba(15,23,42,0.9);
+      border-radius: 14px;
+      border: 1px solid rgba(148,163,184,0.5);
+      padding: 16px 18px;
+    }
+
+    .repair-services-box h5 {
+      margin: 0 0 8px;
+      font-size: 15px;
+    }
+
+    .repair-services {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .repair-services li {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+
+    .repair-services li::before {
+      content: "✔";
+      font-size: 11px;
+      margin-top: 2px;
+      color: #22c55e;
+    }
+
+    .service-card {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .service-features {
+      list-style: none;
+      padding-left: 0;
+      margin: 4px 0 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .service-features li {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 4px;
+    }
+
+    .service-features li::before {
+      content: "•";
+      font-size: 16px;
+      line-height: 1;
+      margin-top: 1px;
+      color: var(--accent-2);
+    }
+
+    .service-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+
+    /* Floating chat button + window */
+    .chat-toggle {
+      position: fixed;
+      right: 20px;
+      bottom: 24px;
+      width: 56px;
+      height: 56px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #25d366, #128c7e); /* WhatsApp vibe */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #0b0f1a;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+      border: none;
+      z-index: 999;
+      font-size: 26px;
+    }
+
+    .chat-toggle span {
+      line-height: 1;
+    }
+
+    .chat-window {
+      position: fixed;
+      right: 20px;
+      bottom: 90px;
+      width: 300px;
+      max-width: calc(100% - 40px);
+      background: var(--card);
+      border-radius: 16px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+      border: 1px solid rgba(148,163,184,0.4);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      z-index: 999;
+    }
+
+    .chat-window.open {
+      display: flex;
+    }
+
+    .chat-window-header {
+      padding: 10px 14px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #0b0f1a;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .chat-window-header button {
+      background: transparent;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      color: #0b0f1a;
+    }
+
+    .chat-window-body {
+      padding: 12px 14px;
+      font-size: 13px;
+      color: var(--muted);
+      background: radial-gradient(circle at top left, rgba(56,189,248,0.08), transparent);
+    }
+
+    .chat-window-body strong {
+      color: #e5e7eb;
+    }
+
+    .chat-window-footer {
+      padding: 12px 14px 14px;
+      background: rgba(15,23,42,0.9);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .chat-window-footer a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: none;
+      background: #25d366;
+      color: #052e16;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .chat-window-footer small {
+      font-size: 11px;
+      color: var(--muted);
+    }
+    /* How We Work – cycle layout */
+#process {
+  margin: 80px 0;
+}
+
+.process-cycle {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 32px;
+  margin-top: 24px;
+}
+
+.process-step {
+  max-width: 260px;
+  text-align: left;
+}
+
+.process-step-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+  color: #020617;
+  box-shadow: 0 10px 24px rgba(15,23,42,0.9);
+  margin-bottom: 8px;
+}
+
+.process-step-title {
+  font-size: 15px;
+  margin: 0 0 4px;
+}
+
+.process-step-text {
+  font-size: 13px;
+  margin: 0;
+  color: var(--muted);
+}
+
+.process-arrow {
+  align-self: center;
+  font-size: 26px;
+  opacity: 0.7;
+}
+
+/* Small note under the cycle to show it repeats */
+.process-loop-note {
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .process-cycle {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .process-arrow {
+    transform: rotate(90deg); /* arrows point down on mobile */
+    margin-left: 18px;
+  }
+}
+
+	
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.tech-tags span {
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(148,163,184,0.6);
+  color: var(--muted);
+  background: rgba(15,23,42,0.85);
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <div class="brand">
+        <img src="logo.png" alt="NextEdge Tech Logo">
+        <div>
+          <h1>NEXTEDGE TECH</h1>
+          <div class="tag">Build. Design. Repair. Analyze.</div>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#data">Data</a>
+        <a href="#team">Team</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div>
+        <h2>Smart, Simple and Effective Tech Solutions</h2>
+        <p class="muted">We create stunning websites and web apps, visuals, perform data analysis and keep your devices running flawlessly.</p>
+        <div class="cta-row">
+          <a class="btn" href="#contact">Book a Free Consultation</a>
+        </div>
+      </div>
+      <div class="device-stack float">
+  <div class="device">
+    <img src="neon spiral.jpg" alt="Neon spiral tech artwork">
+  </div>
+</div>
+
+
+    </section>
+
+        <section id="services">
+  <h3>Our Services</h3>
+  <div class="grid">
+    <div class="card service-card">
+      <div class="service-icon">💻</div>
+      <h4>Web &amp; App Development</h4>
+      <ul class="service-features">
+        <li>Responsive business &amp; portfolio websites</li>
+        <li>Landing pages for promotions &amp; launches</li>
+        <li>Online forms for bookings &amp; enquiries</li>
+      </ul>
+      <p class="muted" style="font-size:12px;margin-top:6px;">
+        Typical starter projects from <strong>BBD $650</strong>.
+      </p>
+    </div>
+
+    <div class="card service-card">
+      <div class="service-icon">🎨</div>
+      <h4>Graphic Design</h4>
+      <ul class="service-features">
+        <li>Logos &amp; brand identity kits</li>
+        <li>Flyers, posters &amp; social media graphics</li>
+        <li>Product labels, invitations &amp; print layouts</li>
+      </ul>
+      <p class="muted" style="font-size:12px;margin-top:6px;">
+        Design packages from <strong>BBD $180</strong>.
+      </p>
+    </div>
+
+    <div class="card service-card">
+      <div class="service-icon">📱</div>
+      <h4>Phone Repairs</h4>
+      <ul class="service-features">
+        <li>Diagnosis &amp; fault finding</li>
+        <li>Screen, battery &amp; charging-port replacements</li>
+        <li>Speaker, camera &amp; button repairs</li>
+      </ul>
+      <p class="muted" style="font-size:12px;margin-top:6px;">
+        Diagnosis from <strong>BBD $40</strong>.
+      </p>
+    </div>
+
+    <div class="card service-card">
+      <div class="service-icon">📊</div>
+      <h4>Data Cleaning &amp; Visualization</h4>
+      <ul class="service-features">
+        <li>Data cleaning &amp; preparation in Excel / SQL</li>
+        <li>Power BI &amp; Tableau dashboards</li>
+        <li>Automated reports &amp; KPI tracking</li>
+      </ul>
+      <p class="muted" style="font-size:12px;margin-top:6px;">
+        Dashboard projects from <strong>BBD $550</strong>.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<section id="process">
+  <h3>How We Work</h3>
+  <p class="muted">
+    We keep things simple, clear and transparent from first message to final delivery.
+  </p>
+
+  <div class="process-cycle">
+    <!-- Step 1 -->
+    <div class="process-step">
+      <div class="process-step-circle">1</div>
+      <h4 class="process-step-title">Free Online Consultation</h4>
+      <p class="process-step-text">
+        Share your website idea, design, data or repair needs over a quick online call or WhatsApp chat.
+      </p>
+    </div>
+
+    <div class="process-arrow">➝</div>
+
+    <!-- Step 2 -->
+    <div class="process-step">
+      <div class="process-step-circle">2</div>
+      <h4 class="process-step-title">Clear Plan &amp; Quote</h4>
+      <p class="process-step-text">
+        We outline the scope, timelines and cost in plain language so you know exactly what you’re getting.
+      </p>
+    </div>
+
+    <div class="process-arrow">➝</div>
+
+    <!-- Step 3 -->
+    <div class="process-step">
+      <div class="process-step-circle">3</div>
+      <h4 class="process-step-title">Build, Launch &amp; Support</h4>
+      <p class="process-step-text">
+        We design, build and test your solution, gather your feedback, then provide ongoing support after launch.
+      </p>
+    </div>
+  </div>
+
+  <p class="process-loop-note">
+    ↺ After launch, we can loop back into new improvements, updates or ongoing support as your needs grow.
+  </p>
+</section>
+
+
+
+
+<section id="portfolio">
+  <h3>Project Gallery</h3>
+  <p class="muted">
+    Explore our full project range – from design &amp; branding to data dashboards and device repairs.
+  </p>
+
+  <!-- DESIGN & BRANDING -->
+  <h4 style="margin-top:18px">Design &amp; Branding</h4>
+  <div class="slideshow-container" id="design-slideshow">
+    <div class="slide">
+      <img src="Invite.jpg" alt="Wedding invitation design">
+      <h4>Wedding Invitation</h4>
+      <p class="muted">Elegant wedding invite for Mary &amp; Paul with soft watercolor and gold script.</p>
+    </div>
+    <div class="slide">
+      <img src="Poster.jpg" alt="Party event poster">
+      <h4>Event Poster</h4>
+      <p class="muted">High–energy “ChillOut” party flyer with DJ artwork and neon lighting.</p>
+    </div>
+    <div class="slide">
+      <img src="Advertisement.jpg" alt="Toshiba printer advertisement">
+      <h4>Product Advertisement</h4>
+      <p class="muted">Clean Toshiba MFP ad highlighting specs and QR code.</p>
+    </div>
+    <div class="slide">
+      <img src="Bottle Label.jpg" alt="Coconut water bottle label">
+      <h4>Label &amp; Packaging Design</h4>
+      <p class="muted">Alkie’s Coconut Water label with organic branding and nutrition facts.</p>
+    </div>
+    <button class="prev" onclick="changeSlide('design', -1)">&#10094;</button>
+    <button class="next" onclick="changeSlide('design', 1)">&#10095;</button>
+  </div>
+  <div class="dot-container" id="design-dots"></div>
+
+  <!-- DATA DASHBOARDS -->
+  <h4 id="data" style="margin-top:32px">Data Analysis Dashboards</h4>
+  <p class="muted">Power BI &amp; Tableau dashboards showing insights across industries.</p>
+  <div class="slideshow-container" id="data-slideshow">
+    <div class="slide">
+      <img src="dashboard1.jpg" alt="Restaurant inventory and waste dashboard">
+      <h4>Restaurant Inventory &amp; Waste</h4>
+      <p class="muted">Power BI report showing sales, waste, and top-selling items by branch.</p>
+    </div>
+    <div class="slide">
+      <img src="dashboard.jpg" alt="Fast food restaurant executive summary dashboard">
+      <h4>Fast Food KPI Executive Summary</h4>
+      <p class="muted">KPI dashboard tracking revenue, orders, payment share and monthly trends.</p>
+    </div>
+    <div class="slide">
+      <img src="dashboard2.jpg" alt="Toy store sales performance dashboard">
+      <h4>Toy Store Sales Performance</h4>
+      <p class="muted">Sales performance by category, top products, and category trends.</p>
+    </div>
+    <div class="slide">
+      <img src="dashboard3.jpg" alt="Toy store sales distribution dashboard">
+      <h4>Sales Distribution &amp; Geography</h4>
+      <p class="muted">Customer frequency treemap and parish-level revenue map.</p>
+    </div>
+    <button class="prev" onclick="changeSlide('data', -1)">&#10094;</button>
+    <button class="next" onclick="changeSlide('data', 1)">&#10095;</button>
+  </div>
+  <div class="dot-container" id="data-dots"></div>
+
+    <!-- REPAIR -->
+  <h4 style="margin-top:32px">Device Repair Work</h4>
+  <p class="muted">Precision phone repairs and maintenance.</p>
+
+  <div class="repair-layout">
+    <!-- Slideshow -->
+    <div class="slideshow-container" id="repair-slideshow">
+      <div class="slide">
+        <img src="Repair.jpg" alt="Phone repair workspace">
+        <h4>Phone Repair Bench</h4>
+        <p class="muted">Detailed smartphone disassembly and hardware diagnostics setup.</p>
+      </div>
+      <button class="prev" onclick="changeSlide('repair', -1)">&#10094;</button>
+      <button class="next" onclick="changeSlide('repair', 1)">&#10095;</button>
+    </div>
+
+    <!-- Services list -->
+    <div class="repair-services-box">
+      <h5>Phone Repair Services</h5>
+      <ul class="repair-services">
+        <li>Diagnostic checks &amp; fault finding</li>
+        <li>Screen &amp; replacement</li>
+        <li>Battery testing &amp; replacement</li>
+        <li>Charging port &amp; button repairs</li>
+        <li>Camera &amp; speaker issues</li>
+        <li>Software resets &amp; basic data backup</li>
+		<li>Phone unlocking </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="dot-container" id="repair-dots"></div>
+
+</section>
+
+
+<section id="testimonials">
+  <h3>What Our Clients Say</h3>
+  <div class="grid">
+    <div class="card">
+      <p class="muted">
+        “NextEdge Tech took my basic idea and turned it into a clean, professional website that my customers actually use.
+        Communication was clear and fast from start to finish.”
+      </p>
+      <p><strong>— [Client Name], Small Business Owner</strong></p>
+    </div>
+    <div class="card">
+      <p class="muted">
+        “The dashboard they built saves me hours every week. I can see sales, trends and problem areas at a glance.”
+      </p>
+      <p><strong>— [Client Name], Operations / Management</strong></p>
+    </div>
+    <div class="card">
+      <p class="muted">
+        “Professional, friendly and efficient. My phone was diagnosed and repaired quickly with clear updates throughout.”
+      </p>
+      <p><strong>— [Client Name], Phone Repair Customer</strong></p>
+    </div>
+  </div>
+</section>
+
+
+
+
+     <!-- ABOUT / TEAM -->
+    <section id="about">
+  <h3>About NextEdge Tech</h3>
+  <p class="muted">
+    NextEdge Tech is a fully online Barbados-based digital solutions studio founded by two 
+    University of the West Indies Computer Science graduates. We combine strong technical 
+    expertise with modern design to deliver custom websites and web applications, professional 
+    graphic design, data-focused dashboards, and precision phone repair services—all coordinated 
+    through convenient online consultations.
+  </p>
+  <p class="muted">
+    We currently serve clients across Barbados only, with a focus on solo professionals, 
+    startups and small businesses who need professional tech support without the corporate 
+    price tag. As founders, we bring enterprise-level skills with a friendly, hands-on 
+    approach so every project feels clear, collaborative and well-supported.
+  </p>
+
+  <div class="grid">
+    
+    <div class="card">
+      <h4>Why We Started</h4>
+      <p class="muted">
+        We saw how many Barbadian businesses were juggling multiple freelancers for websites, 
+        graphics, data and device support. NextEdge Tech was created to bring those services 
+        together in one reliable, easy-to-reach online studio.
+      </p>
+    </div>
+  </div>
+      <div class="team">
+	   <h3>Meet the Team</h3>
+        <div class="person">
+          <div class="avatar">AL</div>
+          <h4 style="margin-top:12px;margin-bottom:6px">ALINTHIA</h4>
+          <div class="role">Developer & Data Analyst</div>
+          <p class="muted" style="margin-top:10px">Crafts beautiful websites, apps, and graphics with user experience at the core.</p>
+        </div>
+        <div class="person">
+          <div class="avatar">DE</div>
+          <h4 style="margin-top:12px;margin-bottom:6px">DEIMARO</h4>
+          <div class="role">Device Repair & Tech Support Specialist</div>
+          <p class="muted" style="margin-top:10px">Expert in rapid diagnostics and trusted phone repairs.</p>
+        </div>
+      </div>
+    </section>
+	
+	<section id="tools">
+  <h3>Tools &amp; Technologies</h3>
+  <p class="muted">
+    We use modern, reliable tools so your projects are easy to maintain and ready to grow.
+  </p>
+  <div class="tech-tags">
+    <span>HTML &amp; CSS</span>
+    <span>JavaScript</span>
+    <span>WordPress (on request)</span>
+    <span>Canva / Figma</span>
+    <span>Excel &amp; SQL</span>
+    <span>Power BI</span>
+    <span>Tableau</span>
+    <span>Android &amp; iOS diagnostics</span>
+  </div>
+</section>
+
+<section id="faq">
+  <h3>Frequently Asked Questions</h3>
+  <div class="grid">
+    <div class="card">
+      <h4>How do we meet if you’re 100% online?</h4>
+      <p class="muted">
+        All consultations are done via WhatsApp, Zoom or Google Meet. You choose what’s most convenient and we handle everything remotely.
+      </p>
+    </div>
+    <div class="card">
+      <h4>How long does a basic website take?</h4>
+      <p class="muted">
+        A simple one–page or small business website typically takes 1–3 weeks, depending on content, feedback speed and any custom features.
+      </p>
+    </div>
+    <div class="card">
+      <h4>How does payment work?</h4>
+      <p class="muted">
+        For most projects, we request a deposit to start and the balance on completion. Smaller services like phone repairs or single designs can be paid in full.
+      </p>
+    </div>
+    <div class="card">
+      <h4>Do you only work in Barbados?</h4>
+      <p class="muted">
+        Yes. NextEdge Tech is currently focused on serving clients across Barbados only.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+   <!-- CONTACT -->
+    <section id="contact">
+      <h3 style="margin-top:28px">Free Online Consultation</h3>
+      <p class="muted">Grab a free 30-minute online consultation. We'll review your website, app, design, or device needs and give clear next steps.</p>
+      <div class="contact">
+        <form id="contact-form" onsubmit="event.preventDefault();alert('Thanks! We received your request — placeholder behavior.');">
+          <div style="display:flex;gap:12px">
+            <input class="input" placeholder="Full name" required>
+            <input class="input" placeholder="Email" required>
+          </div>
+          <div style="margin-top:12px">
+            <select class="input">
+              <option>Free Consultation</option>
+              <option>Data Services</option>
+              <option>Website / App Project</option>
+              <option>Graphic Design Project</option>
+              <option>Phone Repair</option>
+            </select>
+          </div>
+          <div style="margin-top:12px">
+            <textarea class="input" rows="4" placeholder="Tell us a bit about your project or device"></textarea>
+          </div>
+          <div style="margin-top:12px;display:flex;gap:10px;align-items:center">
+            <button class="btn" type="submit">Request Free Consultation</button>
+          </div>
+        </form>
+
+        <div style="padding:20px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.015), transparent);">
+          <h4 style="margin:0">Quick Contact</h4>
+          <p class="muted" style="margin-top:8px">Call: <strong>+1 (246) 282-3798</strong></p>
+          <p class="muted">Email: <strong>info@nextedgetech.com</strong></p>
+          <p class="muted">Location: <strong>Rices, Barbados</strong></p>
+
+          <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+  <a class="muted-btn" href="#">
+    <i class="fab fa-instagram"></i>
+    <span>Instagram</span>
+  </a>
+  <a class="muted-btn" href="#">
+    <i class="fab fa-facebook-f"></i>
+    <span>Facebook</span>
+  </a>
+  <a class="muted-btn" href="#">
+    <i class="fab fa-linkedin-in"></i>
+    <span>LinkedIn</span>
+  </a>
+</div>
+
+
+          <hr style="border-color:rgba(255,255,255,0.03);margin:16px 0">
+          <h5 style="margin:0">What to expect in the free consultation</h5>
+          <ul class="muted" style="margin-top:8px">
+            <li>30 minutes, online (Zoom/WhatsApp/Google Meet)</li>
+            <li>Clear recommendations & a rough price estimate</li>
+            <li>No obligation — just honest advice</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+    <footer>
+      <img src="logo.png" alt="NextEdge Tech Logo">
+      © <span id="yr"></span> NextEdge Tech 
+    </footer>
+  </div>
+     <div id="lightbox" class="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img id="lightbox-img" src="" alt="Gallery image">
+</div>
+
+
+  <script>
+document.addEventListener('DOMContentLoaded', function () {
+  /* ---- Footer year ---- */
+  const yr = document.getElementById('yr');
+  if (yr) yr.textContent = new Date().getFullYear();
+
+  /* ---- Chat toggle (same as before) ---- */
+  const chatToggle = document.getElementById('chat-toggle');
+  const chatWindow = document.getElementById('chat-window');
+  const chatClose  = document.getElementById('chat-close');
+
+  if (chatToggle && chatWindow) {
+    chatToggle.addEventListener('click', function (e) {
+      e.preventDefault();
+      chatWindow.classList.toggle('open');
+    });
+  }
+  if (chatClose && chatWindow) {
+    chatClose.addEventListener('click', function (e) {
+      e.preventDefault();
+      chatWindow.classList.remove('open');
+    });
+  }
+
+  /* ---- Multi-gallery slideshows ---- */
+  const galleries = {};
+
+  function initGallery(prefix, visibleCount) {
+    const container = document.getElementById(prefix + '-slideshow');
+    if (!container) return;
+
+    const slides = container.querySelectorAll('.slide');
+    const dotsContainer = document.getElementById(prefix + '-dots');
+    if (!slides.length || !dotsContainer) return;
+
+    galleries[prefix] = { slides, dotsContainer, visibleCount, index: 0 };
+
+    dotsContainer.innerHTML = '';
+    slides.forEach(function (_, i) {
+      const dot = document.createElement('span');
+      dot.className = 'dot';
+      dot.addEventListener('click', function () {
+        showGallery(prefix, i);
+      });
+      dotsContainer.appendChild(dot);
+    });
+
+    showGallery(prefix, 0);
+  }
+
+  function showGallery(prefix, newIndex) {
+    const g = galleries[prefix];
+    if (!g) return;
+
+    const { slides, dotsContainer, visibleCount } = g;
+    const total = slides.length;
+    let index = newIndex;
+
+    if (index < 0) index = total - 1;
+    if (index >= total) index = 0;
+    g.index = index;
+
+    slides.forEach(slide => slide.style.display = 'none');
+    const dots = dotsContainer.querySelectorAll('.dot');
+    dots.forEach(dot => dot.classList.remove('active'));
+
+    const count = Math.min(visibleCount, total);
+    for (let i = 0; i < count; i++) {
+      const idx = (index + i) % total;
+      slides[idx].style.display = 'block';
+    }
+
+    if (dots[index]) dots[index].classList.add('active');
+  }
+
+  function changeSlide(prefix, delta) {
+    const g = galleries[prefix];
+    if (!g) return;
+    showGallery(prefix, g.index + delta);
+  }
+
+  // Make available to the onclick buttons
+  window.changeSlide = changeSlide;
+
+  // Init galleries: 2 / 3 / 1 per view
+  initGallery('design', 2);
+  initGallery('data',   2);
+  initGallery('repair', 1);
+
+  /* ---- Lightbox (click to zoom) ---- */
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxClose = document.querySelector('.lightbox-close');
+
+  if (lightbox && lightboxImg && lightboxClose) {
+    document.querySelectorAll('.slideshow-container .slide img').forEach(function (img) {
+      img.style.cursor = 'pointer';
+      img.addEventListener('click', function () {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt || '';
+        lightbox.classList.add('show');
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('show');
+    }
+
+    lightboxClose.addEventListener('click', function (e) {
+      e.stopPropagation();
+      closeLightbox();
+    });
+
+    lightbox.addEventListener('click', closeLightbox);
+
+    window.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  }
+});
+</script>
+
+
+  <!-- Floating Chat -->
+  <div id="chat-window" class="chat-window">
+    <div class="chat-window-header">
+      <span>Chat with NextEdge Tech</span>
+      <button id="chat-close" aria-label="Close chat">&times;</button>
+    </div>
+    <div class="chat-window-body">
+      <p><strong>Hi 👋</strong></p>
+      <p>
+        Have a question about a website, design, or device repair?<br>
+        Send us a quick message on WhatsApp and we’ll get back to you.
+      </p>
+    </div>
+    <div class="chat-window-footer">
+      <!-- TODO: put your real number here -->
+      <a id="chat-whatsapp" href="https://wa.me/12462823798?text=Hi%20NextEdge%20Tech%2C%20I%27m%20interested%20in%20your%20services." target="_blank" rel="noopener">
+        💬 Chat on WhatsApp
+      </a>
+      <small>Available during normal business hours.</small>
+    </div>
+  </div>
+
+  <button id="chat-toggle" class="chat-toggle" aria-label="Open chat">
+    <span>💬</span>
+  </button>
+
+</body>
+</html>
